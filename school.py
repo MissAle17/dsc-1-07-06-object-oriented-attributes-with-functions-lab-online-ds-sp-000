@@ -12,14 +12,15 @@ class School():
         else: 
             self._roster[grade_level] = [student_name]
         return self._roster
-                 
-                 
-                 #, orders=[], location=None):
-       # self.name=name
-       # self.orders = orders
-        #self.location = location
-        #self.total_spent = sum([i['item_cost']*i['quantity'] for i in orders])
-   # def add_order(self, item_name, item_cost, quantity):
-    #    self.orders.append({'item_name': item_name, 'item_cost':item_cost, 'quantity':quantity})
-     #   self.total_spent += item_cost * quantity
+    
+    def grade(self,grade_level):
+        return self._roster[grade_level]
+    
+    def sort_roster(self):
+        alpha = {}
+        for grade_level in self._roster:
+            alpha[grade_level] = self._roster[grade_level]
+            alpha[grade_level].sort()
+        return alpha
+                
  
